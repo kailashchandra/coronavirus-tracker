@@ -45,11 +45,14 @@ public class CoronavirusDataService {
 			LocationStats locationStats = new LocationStats();
 			locationStats.setState(record.get("Province/State"));
 			locationStats.setCountry((record.get("Country/Region")));
-			int latestCases = Integer.parseInt(record.get(record.size()-1));
-			int prevDayCases = Integer.parseInt(record.get(record.size()-2));
-			
-			locationStats.setLatestTotal(latestCases);
-			locationStats.setDiffFromPrevDay((latestCases-prevDayCases) > 0 ? latestCases-prevDayCases : 0);
+			String size1 = record.get(record.size()-1);
+			String size2 = record.get(record.size()-2);
+			if(!size1.equals("") && !size2.equals("")) {
+				int latestCases = Integer.parseInt(size1);
+				int prevDayCases = Integer.parseInt(size2);
+				locationStats.setLatestTotal(latestCases);
+				locationStats.setDiffFromPrevDay((latestCases-prevDayCases) > 0 ? latestCases-prevDayCases : 0);
+			}
 //		    String state = record.get("Province/State");
 //		    System.out.println(locationStats);
 		    newStats.add(locationStats);
