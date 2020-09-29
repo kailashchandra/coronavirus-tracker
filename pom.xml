@@ -63,11 +63,11 @@
 
 	<build>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<!-- <plugin>
+			</plugin> -->
+			<plugin>
     			<groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-compiler-plugin</artifactId>
     			<version>3.1</version>
@@ -75,7 +75,7 @@
         			<source>1.7</source>
         			<target>1.7</target>
     			</configuration>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 
